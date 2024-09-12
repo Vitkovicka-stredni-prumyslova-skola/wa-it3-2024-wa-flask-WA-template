@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for("static", filename="style.css" )}}">
+</head>
+<body>
+    
+    <h1>Soubory uložené v databázi</h1>
+    <table>
+        <tr></tr><th>ID souboru</th><th>Název souboru</th></tr>
+        
+        {%for i in range(0, len)%} 
+
+        <tr><td>{{ listOfFiles[i].id }}</td><td><a href="/download/{{ listOfFiles[i].id }}">{{ listOfFiles[i].filename }}</a> </td></tr> 
+        
+        {%endfor%} 
+        
+    </table>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for("static", filename="style.css" )}}">
+</head>
+<body>
+    
+    <h1>Ahoj {{ uzivatelNick }}</h1>
+    <table>
+        <tr><th>nick</th><th>e-mail</th><th>datum registrace</th></tr>
+        <tr><td>{{ uzivatel.get_nick()}}</td><td>{{ uzivatel.get_email()}}</td> <td>{{ uzivatel.get_datum_registrace() }}</td></tr>
+    </table>
+    <h2>Vyhledávací formulář</h2>
+    <form method="get">
+        <label id="nick">Nick:</label>
+        <input type="text" name="nick" id="nick" >
+        <input type="submit" name="odeslat" id="odeslat">
+    </form>
+
+    <div class="center">
+        <h1> Nahrávání souborů do databáze</h1>
+        <form method="POST" action="/" enctype="multipart/form-data">
+            <input class="ok" type="file" name="file">
+            <button class="op">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

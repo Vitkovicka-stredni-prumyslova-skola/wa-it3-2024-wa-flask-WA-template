@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for("static", filename="style.css" )}}">
+</head>
+<body>
+    
+    <h1>Administrace - vložit produkt</h1>
+    
+    <form method="post">
+        <label id="itemName">Název produktu:</label>
+        <input type="text" name="itemName" id="itemName" ><br>
+
+        <label id="descriptionItem">Popis produktu:</label>
+        <input type="text" name="descriptionItem" id="descriptionItem"><br>
+        
+        <label id="priceItem">Cena:</label>
+        <input type="text" name="priceItem" id="priceItem" ><br>
+
+        <input class="ok" type="file" name="file">
+            <button class="op">Uložit</button>
+    </form>
+</body>
+</html>
